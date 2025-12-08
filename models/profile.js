@@ -1,6 +1,8 @@
+import mongoose from "mongoose";
+
 const ProfileSchema = new mongoose.Schema(
     {
-        FirstName: { type: String, required: true, unique: true },
+        FirstName: { type: String, required: true },
         MiddleName: { type: String, required: true },
         LastName: { type: String, required: true },
         Gander: { type: String, required: true },
@@ -26,7 +28,10 @@ const ProfileSchema = new mongoose.Schema(
         AddressAsPertheAadharCard: { type: String, required: true },
         PresentPortalAddress: { type: String, required: true },
         PermanentPortalAddress: { type: String, required: true },
-        UserID: { type: String, required: true },
+        email: { type: String, required: true, unique:true },
     },
     { timestamps: true }
 );
+
+
+export default mongoose.model("Profile", ProfileSchema);

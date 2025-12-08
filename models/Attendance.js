@@ -5,6 +5,7 @@ const AttendanceSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, ref: "User", required: true
   },
   date: { type: String, required: true },
+  email: { type: String, required: true, unique:true },
   records: [
     {
       clockIn: String,
@@ -12,7 +13,7 @@ const AttendanceSchema = new mongoose.Schema({
     }
   ],
   totalWork: String,
-  status: String
+  status: String,
 }, { timestamps: true });
 
 export default mongoose.model("Attendance", AttendanceSchema);
