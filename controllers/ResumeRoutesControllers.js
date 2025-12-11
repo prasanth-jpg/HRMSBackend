@@ -1,6 +1,6 @@
 import RevokedFlow from "../models/RevokedFlow.js";
 
-export const createRevokedFlows = async (req, res) => {
+export const createResumeRoutesRoutes = async (req, res) => {
   try {
     const newResume = new Resume(req.body);
     await newResume.save();
@@ -11,7 +11,7 @@ export const createRevokedFlows = async (req, res) => {
   }
 };
 
-export const RevokedFlowsGet = async (req, res)=>{
+export const ResumeRoutesRoutesGet = async (req, res)=>{
   try {
     const revokedFlow = await RevokedFlow.find();
     res.status(200).json(revokedFlow);

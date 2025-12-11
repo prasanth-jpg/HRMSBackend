@@ -21,13 +21,14 @@ import PayrollDocumentsRoutes from "./routes/PayrollDocumentsRoutes.js";
 import ResumeRoutes from "./routes/ResumeRoutes.js";
 import individualFeedBack from "./routes/individualFeedBack.js";
 import MyRequestsRoutes from "./routes/MyRequestsRoutes.js";
-import MyRequestsRoutes from "./routes/MyRequestsRoutes.js";
+// import MyBenefitsRoutes from "./routes/MyBenefitsRoutes.js";
 import BenefitsSlipsRoutes from "./routes/BenefitsSlipsRoutes.js";
 import ActiveRoutes from "./routes/ActiveRoutes.js";
 import DraftsRoutes from "./routes/DraftsRoutes.js";
 import CompletedFlowRoutes from "./routes/CompletedFlowRoutes.js";
 import RevokedFlowRoutes from "./routes/RevokedFlowRoutes.js";
 import AllWorkflowFlowRoutes from "./routes/AllWorkflowFlowRoutes.js";
+import NotificationRoutes from "./routes/NotificationRoutes.js";
 
 const app = express();
 app.use(cors());
@@ -63,7 +64,7 @@ app.use("/api/individualFeedBack", individualFeedBack);
 
 //benifits
 app.use("/api/MyRequests", MyRequestsRoutes);
-app.use("/api/MyBenefits", MyBenefitsRoutes);
+// app.use("/api/MyBenefits", MyBenefitsRoutes);
 app.use("/api/BenefitsSlips", BenefitsSlipsRoutes);
 
 //flow
@@ -72,6 +73,9 @@ app.use("/api/Drafts", DraftsRoutes);
 app.use("/api/CompletedFlowRoutes", CompletedFlowRoutes);
 app.use("/api/RevokedFlowRoutes", RevokedFlowRoutes);
 app.use("/api/AllWorkflowFlowRoutes", AllWorkflowFlowRoutes);
+
+//notifications
+app.use("/api/Notification", NotificationRoutes);
 
 
 const PORT = process.env.PORT || 5000;
