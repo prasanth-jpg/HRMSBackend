@@ -14,8 +14,7 @@ export const createProfile = async (req, res) => {
 
 export const profileGet = async (req, res) => {
   try {
-    const { emailId } = req.params.email;
-    const profile = await Profile.findOne({ emailId });
+    const profile = await Profile.find();
     if (!profile) {
       return res.status(404).json({ message: "No profile found" })
     }
